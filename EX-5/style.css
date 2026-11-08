@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    background-color: rosybrown;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1%;
+}
+.wrapper{
+    display: grid;
+    grid-template-rows: 60% 10% 15% auto;
+    background-color: royalblue;
+    border-radius: 5px;
+}
+.wrapper img{
+    height: 50%;
+    width: 100%;
+}
+.wrapper h2{
+    justify-self: center;
+    font-size: 1em;
+    color: greenyellow;
+}
+.wrapper h4{
+    font-size: 0.75em;
+    grid-row: span 2;
+}
+.wrapper button{
+    font-size: 0.5em;
+    background-color: bisque;
+    border-style: none;
+    border-radius: 5px;
+}
+.wrapper button:hover{
+    background-color: indigo;
+    color: lightgreen;
+}
+.eiffel{
+    grid-row: span 3;
+}
+.row2{
+    grid-row: span 2;
+}
+.col2{
+    grid-column: span 2;
+}

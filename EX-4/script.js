@@ -1,30 +1,23 @@
-const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+let ctx = document.getElementById("myChart");
+const xValues = ["Yi Sang", "Faust", "Don Quixote", "Ryoshu", "Meursault", "Hong Lu", "Heathcliff", "Ishmael", "Rodion", "Sinclair", "Outis", "Gregor"];
+const yValues = [2, 10, 5, 13, 19, 15, 17, 11, 4, 4, 1, 8, 1];
+const barColors = ["#d4e1e8", "#ffb1b4", "#ffef23", "#cf0000", "#293b95", "#5bffde", "#4e3076", "#ff9500", "#820000", "#8b9c15", "#325339", "#69350b"];
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data:{
+        label: ['Yi Sang', 'Faust'],
         datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
+            backgroundColors: ['red', 'blue'],
+            data: [2, 10],
+            borderWidth: 1
         }]
     },
     options:{
-        scales: {
-        y: { beginAtZero: true }
+        plugins:{
+            title:{
+                display: true,
+                text: "Sinners' Performance by Vote"
+            }
         }
     }
     });
-window.addEventListener("DOMContentLoaded", function(){
-    const slides = document.querySelectorAll(".slide");
-    let index = 0;
-    if (slides.length < 2){
-        return;
-    }
-    setInterval(function(){
-        slides[index].classList.remove("active");
-        index = (index + 1) % slides.length;
-        slides[index].classList.add("active");
-    }, 1500);
-});
