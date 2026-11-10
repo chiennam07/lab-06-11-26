@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'faustina';
 }
 .screen{
@@ -16,6 +17,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    z-index: 2;
 }
 .image h3{
     color: darkred;
@@ -36,39 +38,97 @@
     position: sticky;
     top: 35vh;
     height: 65vh;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 .navbar ul{
     display: flex;
     flex-direction: column;
+    gap: 10%;
 }
 .navbar li{
     list-style-type: none;
-    color: gold;
-    font-size: 2vw;
+    font-size: 1.5em;
 }
 .navbar a{
     text-decoration: none;
     color: gold;
 }
-.navbar a:hover{
+.navbar li:hover{
+    border-radius: 5px;
     background-color: burlywood;
     color: bisque;
 }
 .display{
     background-color: rgb(84, 207, 84);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
 }
-.chart{
-    max-width: 900px;
-    height: 450px;
+.cardHolder{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 1% 0 1%;
+    gap: 1%;
+    overflow: hidden;
+}
+.card{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+.card h2{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1%;
+    background-color: seagreen;
+    color: paleturquoise;
+}
+.meur h2{
+    background-color: rgb(62 45 45);
+    color: rgb(84, 207, 84);
+}
+.card img{
+    height: 350px;
+    width: 100%;
+    object-fit: contain;
+    object-position: bottom;
+}
+.meur img{
+    width: 60%;
+    transform: translateX(50px);
+}
+.ryo img{
+    transform: translateX(-15px);
+}
+.heath img{
+    width: 120%;
+    transform: translateX(-30px);
+}
+#myChart{
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+}
+.win-rate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(84, 207, 84);
+}
+.win-rate h1{
+    padding: 20px;
+    position: fixed;
+    background-color: rgb(62 45 45);
+    color: rgb(84, 207, 84);
+}
+.win-rate h1:active{
+    border: 20px solid gold;
 }
 @media (max-width: 750px){
     .screen{
         grid-template-columns: 1fr;
-        grid-template-rows: 40vh 10vh auto;
+        grid-template-rows: 36vh 10vh auto;
     }
     .image{
         flex-direction: column;
@@ -78,20 +138,32 @@
         margin-top: 2%;
     }
     .image h3{
-        font-size: 2.5em;
+        font-size: 2em;
         margin: 3% 0 0 0;
-        z-index: 0;
     }
     .navbar{
         height: 10vh;
-        top: 40vh;
+        top: 36vh;
     }
     .navbar ul{
         flex-direction: row;
-        gap: 10%;
+        align-items: center;
+    }
+    .navbar li{
+        font-size: 1.2em;
     }
     .display{
         grid-row: 3;
         z-index: 1;
+    }
+    .meur img{
+        width: 70%;
+    }
+    .heath img{
+        transform: translateX(-50px);
+    }
+    .win-rate{
+        grid-row: 3;
+        height: 54vh;
     }
 }

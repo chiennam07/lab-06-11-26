@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview</title>
+    <link rel="stylesheet" href="../style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Sinner', 'Win-rate'],
+                ['Yi Sang', 7],
+                ['Faust', 5],
+                ['Don Quixote', 5],
+                ['Ryoshu', 9],
+                ['Meursault', 9],
+                ['Hong Lu', 7],
+                ['Heathcliff', 9],
+                ['Ishmael', 2],
+                ['Rodya', 2],
+                ['Sinclair', 2],
+                ['Outis', 2],
+                ['Gregor', 6]
+            ]);
+            var options = {
+                title: 'General Performance',
+                width: 800,
+                height: 300,
+                backgroundColor: {fill: 'transparent'},
+            };
+            hAxis: {
+                titleTextStyle: {color: '#ff0000'}
+            }
+            var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <div class="screen">
+        <div class="image">
+            <img src="../images/vK7_jbBjA3glkbvV-r0nEbC49KyeCzzihqIe6X7rH7O0cTUTwMRZ-T3MZndYiPa3v2UKkqib0C6Ns8iOfZRr022bqkpZlpsbmmcsXUZ89IZOpjuANjcB8cFYeKOtobTx0lDQ1W_HO3AwEtGk1c4lwA.webp" alt="Save">
+            <h3>FACE THE SIN, SAVE THE E.G.O</h3>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="../pages/index.html">Overview</a></li>
+                <li><a href="../pages/control.html">Control</a></li>
+            </ul>
+        </div>
+        <div class="display">
+            <div id="myChart"></div>
+            <div class="cardHolder">
+                <div class="card meur">
+                    <div><h2>Meursault</h2></div>
+                    <div><h3>Most Valued Employee</h3></div>
+                    <img src="../images/The_Thumb_East_Capo_IIII_Meursault_Idle_Animation.gif" alt="Meursault">
+                </div>
+                <div class="card ryo">
+                    <div><h2>Ryoshu</h2></div>
+                    <div><h3>Most Supportive Employee</h3></div>
+                    <img src="../images/Drifting_Blade_of_Hongyuan_Ryōshū_Idle_Animation.gif" alt="Ryoshu">
+                </div>
+                <div class="card heath">
+                    <div><h2>Heathcliff</h2></div>
+                    <div><h3>Most Manic Employee</h3></div>
+                    <img src="../images/Heishou_Pack_-_You_Branch_Adept_Heathcliff_Idle_Animation.gif" alt="Meursault">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
